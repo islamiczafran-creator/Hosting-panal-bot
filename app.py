@@ -1,5 +1,11 @@
-import asyncio
 import os
+import asyncio
+
+# Railway SQLite auto reset (WORKING)
+if os.getenv("RAILWAY_PROJECT_ID"):
+    db_path = "inf/bot_data.db"
+    if os.path.exists(db_path):
+        os.remove(db_path)
 import sys
 import logging
 import subprocess
